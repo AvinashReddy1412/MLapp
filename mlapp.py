@@ -8,6 +8,7 @@ st.title('Anthem AutoML')
 image = Image.open('Logo.png')
 st.image(image,use_column_width=True)
 
+
 def auto_ml():
     activities = ['EDA', 'Review', 'model', 'About us']
     option = st.sidebar.selectbox('Selection option:', activities)
