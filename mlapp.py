@@ -27,12 +27,32 @@ def auto_ml():
                 st.write(df.shape)
             if st.checkbox("Display columns"):
                 st.write(df.columns)
-            if st.checkbox("Review data"):
-                da = DataAnalyzer(dataframe=data)
-                st.write(da.get_analysis())
             if st.checkbox('Display Correlation of data various columns'):
                 st.write(df.corr())
 
-    if option == "Review":
+    elif option == "Review":
         st.subheader("Review Uploaded Data")
+        data = st.file_uploader("Upload dataset:", type=['csv', 'xlsx', 'txt', 'json'])
+        st.success("Data successfully loaded")
 
+        if data is not None:
+            df = pd.read_csv(data)
+            st.dataframe(df.head(10))
+            if st.checkbox("Review data"):
+                da = DataAnalyzer(dataframe=data)
+                st.write(da.get_analysis())
+
+    elif option == 'model':
+        st.subheader("Model Building")
+
+    elif option == 'About us':
+
+        st.markdown(
+            'This is an interactive web page for our ML project, feel feel free to use it.'
+            )
+
+        st.balloons()
+
+
+if __name__ == '__main__':
+    auto_ml()
