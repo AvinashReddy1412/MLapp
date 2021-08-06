@@ -6,7 +6,7 @@ from PIL import Image
 
 st.title('Anthem AutoML')
 image = Image.open('Logo.png')
-st.image(image,use_column_width=True)
+st.image(image, use_column_width=True)
 
 
 def auto_ml():
@@ -39,7 +39,7 @@ def auto_ml():
             df = pd.read_csv(data)
             st.dataframe(df.head(10))
             if st.checkbox("Review data"):
-                da = DataAnalyzer(dataframe=data)
+                da = DataAnalyzer(dataframe=df)
                 st.write(da.get_analysis())
 
     elif option == 'model':
