@@ -39,8 +39,9 @@ def auto_ml():
             df = pd.read_csv(data)
             st.dataframe(df.head(10))
             if st.checkbox("Review data"):
-                da = DataAnalyzer(dataframe=data)
-                st.write(da.get_analysis())
+                da = DataAnalyzer(dataframe=df)
+                print(da.get_analysis())
+                st.dataframe(da.get_analysis())
 
     elif option == 'model':
         st.subheader("Model Building")
