@@ -272,8 +272,8 @@ class DataAnalyzer:
                 best_param_list.append(best_param)
 
             else:
-                best_distribution_list.append(-1)
-                best_param_list.append(-1)
+                best_distribution_list.append("NA")
+                best_param_list.append("NA")
 
         return best_distribution_list, best_param_list
 
@@ -362,7 +362,7 @@ class DataAnalyzer:
             'categorical_variable_correlation': categorical_correlation,
             'numerical_variable_correlation': numerical_correlation,
             'best_distribution': best_distribution,
-            'best_parameter': best_param
+            # 'best_parameter': best_param
             # 'correlation': correlation
         }
         self.analysis = pd.DataFrame(data_analysed).fillna(-1)
