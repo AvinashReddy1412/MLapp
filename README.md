@@ -1,2 +1,2 @@
 # MLapp
-Anthem AutoML
+AutoML
